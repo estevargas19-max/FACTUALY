@@ -13,7 +13,18 @@ Flujo del producto en 3 pasos:
 
 Formatos de salida: **POS electrónico** (tirilla) y **múltiples diseños PDF**.
 
-Partes del sistema: (a) landing de una sola página con animaciones, (b) registro e inicio de sesión, (c) panel con servicios, clientes y facturas, (d) cobro del plan anual con pasarela de pagos, (e) emisión electrónica vía proveedor tecnológico autorizado por la DIAN.
+Partes del sistema: (a) landing de una sola página con animaciones, (b) formulario de registro con carga de archivos, (c) cobro del plan anual con pasarela de pagos, (d) emisión electrónica vía proveedor tecnológico autorizado por la DIAN, (e) panel de servicios, clientes y facturas (**forma de acceso por definir**).
+
+**La plataforma NO tiene inicio de sesión.** No implementes login, contraseñas de usuarios ni cuentas hasta que el usuario lo indique.
+
+### 1.1 Flujo de compra y registro (vigente)
+
+1. Todos los botones de compra de la landing ("Empezar", "Comprar plan anual") llevan a la página `/registro`.
+2. `/registro` es un formulario con los datos del solicitante y la **carga de archivos requeridos**. Los campos y la lista de archivos están por definir (`TODO(campos)`, `TODO(archivos)`). Mantén la lista de archivos en `config/registration_files.php` (clave, etiqueta, obligatorio, tipos permitidos, tamaño máximo) para poder cambiarla sin tocar el resto del código.
+3. Al enviar el formulario correctamente: guardar el registro con estado `pending_payment` y una referencia aleatoria, guardar los archivos y **redirigir a la pasarela de pagos**.
+4. Resultado del pago (por webhook): `paid`, `payment_failed` o `cancelled`. Si el pago falla, permitir reintentar **sin volver a subir los archivos**.
+5. La página de resultado (`/pago/resultado?ref=...`) lee el estado desde la base de datos, nunca de parámetros de la URL.
+6. No construyas el panel de servicios, clientes y facturas hasta que el usuario defina cómo se accede a él.
 
 ## 2. Stack (no cambiar sin preguntar)
 
@@ -33,11 +44,11 @@ app/
   Core/            # Router, Database (PDO), Session, Csrf, Validator, View
   Controllers/
   Models/
-  Services/        # lógica de negocio (facturas, pagos, suscripción)
+  Services/        # lógica de negocio (registro, pagos, facturas)
   Views/           # plantillas PHP/HTML
-config/            # lectura de variables de entorno
+config/            # variables de entorno y registration_files.php (archivos requeridos)
 database/          # archivos .sql de migración, numerados (001_, 002_ ...)
-storage/           # logs y PDFs generados (fuera de public/)
+storage/           # logs, PDFs generados y uploads/ con los archivos del registro (fuera de public/)
 tests/
 .env.example       # plantilla de variables; el .env real NUNCA se sube
 ```
@@ -57,15 +68,17 @@ Todo lo que no sea `public/` debe quedar fuera del alcance del navegador.
 El sistema maneja cuentas, datos de clientes y dinero. Estas reglas no se negocian:
 
 - **Siempre consultas preparadas** con PDO. Nunca concatenar variables en SQL.
-- Contraseñas con `password_hash()` / `password_verify()`. Nunca en texto plano ni con MD5/SHA1.
+- Como no hay inicio de sesión, no se guardan contraseñas de usuarios. Si algún día se agregan: `password_hash()` / `password_verify()`.
 - **Token CSRF** en todos los formularios y peticiones que cambian datos.
 - Escapar toda salida en HTML con `htmlspecialchars($v, ENT_QUOTES, 'UTF-8')`.
-- Sesiones: `session_regenerate_id(true)` al iniciar sesión; cookies con `HttpOnly`, `Secure` y `SameSite=Lax`.
+- Las sesiones PHP solo sirven para el token CSRF y datos temporales del formulario: cookies con `HttpOnly`, `Secure` y `SameSite=Lax`.
 - Validar **siempre en el servidor** (el JavaScript solo ayuda a la usabilidad).
-- **Aislamiento entre cuentas:** cada consulta de servicios, clientes y facturas se filtra por el dueño (`account_id`). Un usuario jamás debe ver o modificar datos de otro.
-- Limitar intentos de inicio de sesión (rate limit) y no revelar si el correo existe.
+- **Aislamiento entre registros:** cada registro se identifica con una referencia aleatoria e impredecible (`random_bytes`), nunca con un ID incremental en la URL. Nadie debe poder ver datos o archivos de otro registro.
+- Limitar envíos del formulario por IP y agregar protección anti-bots (campo honeypot; evaluar CAPTCHA).
 - Secretos (llaves de la pasarela, base de datos) solo en `.env`, fuera de `public/` y **ignorado por Git**. Nunca en el código ni en commits.
-- Subidas de archivos: validar tipo y tamaño, renombrar y guardar fuera de `public/`.
+- **Archivos subidos (documentos sensibles):** permitir solo los tipos definidos (por ejemplo PDF, JPG, PNG); validar extensión, **tipo MIME real** (`finfo`) y tamaño máximo; renombrar con un nombre aleatorio; guardar en `storage/uploads/`, **fuera de `public/`**; nunca ejecutarlos ni servirlos directamente. Si hay que descargarlos, solo mediante un script con control de acceso.
+- Archivos de registros que nunca se pagaron: dejar un `TODO` para definir cuándo se borran.
+- Los datos y archivos del formulario son información personal: incluir casilla de autorización de tratamiento de datos y enlace a la política de privacidad (en Colombia aplica la Ley 1581 de 2012). `TODO(legal)`: confirmar la redacción con un asesor.
 - Los logs no deben contener contraseñas, tokens ni datos de tarjetas.
 - **Nunca** recibir ni guardar datos de tarjeta: el pago ocurre en el checkout alojado de la pasarela.
 
@@ -73,7 +86,7 @@ El sistema maneja cuentas, datos de clientes y dinero. Estas reglas no se negoci
 
 - Pasarela aún por decidir entre **Wompi, ePayco o PayU**. Diseña una interfaz `PaymentGateway` (crear cobro, consultar estado, validar webhook) y una implementación por proveedor. Empieza con una implementación **simulada (mock)**.
 - Usar siempre el **modo de pruebas (sandbox)** hasta que el usuario indique lo contrario.
-- Flujo: botón "Comprar plan anual" → checkout de la pasarela → **webhook** a nuestro servidor → si el pago está aprobado, activar la suscripción por 12 meses.
+- Flujo: formulario de registro completo → registro en `pending_payment` → checkout de la pasarela (con la referencia del registro) → **webhook** a nuestro servidor → si el pago está aprobado, marcar el registro como `paid` y fijar la vigencia de 12 meses.
 - El webhook debe **verificar la firma** del proveedor, ser **idempotente** (procesar un mismo evento una sola vez) y consultar el estado real del pago cuando el proveedor lo permita. Nunca confiar solo en la redirección del navegador.
 - Tabla de pagos con estados (`pending`, `approved`, `declined`, `error`) y la referencia de la pasarela.
 
@@ -81,7 +94,7 @@ El sistema maneja cuentas, datos de clientes y dinero. Estas reglas no se negoci
 
 - La validación ante la DIAN se hace mediante un **proveedor tecnológico autorizado**. **No implementes desde cero** firma XML ni envío a la DIAN salvo que el usuario lo pida expresamente.
 - Crea una interfaz `InvoiceProvider` con una implementación **simulada** y deja claros los puntos de integración con `// TODO(provider)`.
-- Las **anulaciones** no borran registros: cambian el estado de la factura y guardan fecha, motivo y usuario.
+- Las **anulaciones** no borran registros: cambian el estado de la factura y guardan fecha y motivo.
 - La numeración de facturas debe ser consecutiva y no reutilizable.
 - Si dudas de un requisito legal o tributario, **no lo inventes**: déjalo como `TODO` y avísale al usuario.
 
@@ -117,4 +130,4 @@ Referencia visual aprobada: https://claude.ai/artifact/KYk5qn3BF4RNUyLcqM8jdE (m
 
 ## 11. Definición de "terminado"
 
-Una tarea está lista cuando: funciona en el navegador, no hay errores de PHP ni de consola, se probaron los casos de error (datos vacíos, sesión vencida, usuario sin permiso), cumple la sección 5 de seguridad, y el usuario sabe cómo probarla.
+Una tarea está lista cuando: funciona en el navegador, no hay errores de PHP ni de consola, se probaron los casos de error (datos vacíos, archivo inválido o demasiado grande, doble envío del formulario, pago rechazado), cumple la sección 5 de seguridad, y el usuario sabe cómo probarla.

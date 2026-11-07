@@ -1,0 +1,103 @@
+<?php
+declare(strict_types=1);
+?>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/assets/img/simbolo.png">
+    <meta name="description" content="Facturación electrónica sencilla: servicios, clientes y facturas ilimitadas en un solo plan anual.">
+    <title>Factualy - Facturacion electronica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/landing.css">
+    <script src="/assets/js/landing.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="[TU MARCA], inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a>
+        <a class="button button-small" href="#planes">Empezar</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero section" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Facturación electrónica simple</p>
+                <h1>Factura en tres pasos, <span>sin límites.</span></h1>
+                <p class="hero-description">Un único plan con facturas ilimitadas y anulaciones incluidas. Crea tus servicios, agrega a tu cliente y genera tu factura.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#planes">Comprar plan anual <span aria-hidden="true">↗</span></a>
+                    <a class="button button-secondary" href="#pasos">Ver cómo funciona</a>
+                </div>
+                <div class="hero-price"><strong>$345.900</strong><span>/ año</span><small>Un solo pago anual. Sin límites de facturación.</small></div>
+            </div>
+            <div class="invoice-scene" aria-label="Vista previa de una factura electrónica de ejemplo">
+                <div class="scene-orbit orbit-one"></div><div class="scene-orbit orbit-two"></div>
+                <article class="invoice-card" data-invoice-animation>
+                    <div class="invoice-top"><div class="invoice-brand"><img class="invoice-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><small>Factura electrónica</small></div><span class="invoice-status"><span></span> Emitida</span></div>
+                    <div class="invoice-number invoice-build-item"><span>FACTURA DE VENTA</span><strong>No. FV-000128</strong></div>
+                    <div class="invoice-rule"></div>
+                    <div class="invoice-meta invoice-build-item"><div><small>CLIENTE</small><strong>Comercial La Esquina</strong><span>NIT 900.123.456-7</span></div><div><small>FECHA</small><strong>07 nov 2026</strong><span>Vencimiento: 07 dic 2026</span></div></div>
+                    <div class="invoice-lines invoice-build-item"><div class="invoice-line line-heading"><span>Descripción</span><span>Total</span></div><div class="invoice-line"><span>Consultoría mensual<small>1 servicio</small></span><strong>$280.000</strong></div><div class="invoice-line"><span>Soporte técnico<small>2 horas</small></span><strong>$65.900</strong></div></div>
+                    <div class="invoice-total invoice-build-item"><span>Total a pagar</span><strong>$345.900</strong></div>
+                    <div class="invoice-footer invoice-build-item"><span>Representación gráfica de factura electrónica</span><span class="qr-placeholder" aria-label="Código QR de ejemplo"></span></div>
+                </article>
+                <div class="float-note"><span class="check-icon" aria-hidden="true">✓</span><span><strong>Lista para compartir</strong><small>PDF · POS electrónico</small></span></div>
+            </div>
+        </div>
+        <div class="container trust-note"><span class="trust-line"></span><span>Todo lo que necesitas para facturar, en un solo lugar</span><span class="trust-line"></span></div>
+    </section>
+
+    <section class="section steps-section" id="pasos">
+        <div class="container">
+            <div class="section-heading"><p class="eyebrow">Sin complicaciones</p><h2>Así de simple funciona</h2><p>Tres pasos claros para tener tu factura lista.</p></div>
+            <div class="steps-grid">
+                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">01</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V7.8a1.8 1.8 0 0 1 1.8-1.8h4.8l2 2h5.6A1.8 1.8 0 0 1 20 9.8v9.7H4Z"/><path d="M8 13h8M8 16h5"/></svg></span></div><h3>Paso 1<br>Crea tus servicios</h3><p>Agrega lo que ofreces una sola vez y tenlo listo para cada factura.</p><span class="step-link">Tu catálogo, siempre a mano <span aria-hidden="true">→</span></span></article>
+                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">02</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M17 8a3 3 0 0 1 0 6m1.5 1.5a4 4 0 0 1 2 3.5"/></svg></span></div><h3>Paso 2<br>Agrega tu cliente</h3><p>Elige un cliente guardado o factura directamente a consumidor final.</p><span class="step-link">Un cliente nuevo toma segundos <span aria-hidden="true">→</span></span></article>
+                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v5h5M9 13h6M9 16h6"/></svg></span></div><h3>Paso 3<br>Genera tu factura</h3><p>Revisa los detalles y obtén tu factura electrónica en el formato que necesitas.</p><span class="step-link">Lista para descargar y compartir <span aria-hidden="true">→</span></span></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section formats-section" id="formatos">
+        <div class="container formats-grid">
+            <div class="formats-copy"><p class="eyebrow">Presentación profesional</p><h2>El formato que tu negocio necesita</h2><p>Elige entre varios diseños PDF para compartir con tus clientes o usa el formato POS electrónico para una impresión compacta.</p><a class="text-link" href="#planes">Conoce el plan completo <span aria-hidden="true">→</span></a></div>
+            <div class="format-showcase" aria-label="Ejemplos de formatos de factura">
+                <article class="mini-doc doc-back reveal-card"><div class="doc-head"><img class="doc-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><span class="doc-lines"><i></i><i></i></span></div><div class="doc-sample-emitter">MUESTRA · Bogotá, Colombia<br>Contacto de ejemplo</div><div class="doc-band"></div><div class="doc-sample-client"><b>CLIENTE</b><span>Comercial La Esquina</span><small>Factura FV-000128 · 07 nov 2026</small></div><div class="doc-content"><i></i><i></i><i></i><i></i></div><div class="doc-end"></div></article>
+                <article class="mini-doc doc-front reveal-card"><div class="doc-label">PDF · DISEÑO CLÁSICO</div><div class="doc-head"><img class="doc-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><span class="doc-lines"><i></i><i></i><i></i></span></div><div class="doc-title">FACTURA<br><b>ELECTRÓNICA</b></div><div class="doc-sample-emitter">MUESTRA · Bogotá, Colombia<br>Contacto de ejemplo</div><div class="doc-sample-client"><b>CLIENTE</b><span>Comercial La Esquina</span><small>FV-000128 · 07 nov 2026</small></div><div class="doc-band"></div><div class="doc-items"><div><span>Consultoría mensual</span><b>$280.000</b></div><div><span>Soporte técnico</span><b>$65.900</b></div></div><div class="doc-summary"><span>Subtotal</span><b>$345.900</b><span>Total</span><b>$345.900</b></div></article>
+                <article class="receipt reveal-card"><img class="receipt-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><small>POS ELECTRÓNICO · MUESTRA</small><div class="receipt-dash"></div><div class="receipt-meta">Factura FV-000128<br>07 nov 2026 · Bogotá</div><div class="receipt-dash"></div><div class="receipt-row"><span>Consultoría</span><b>$280.000</b></div><div class="receipt-row"><span>Soporte (2 h)</span><b>$65.900</b></div><div class="receipt-dash"></div><div class="receipt-row receipt-total"><span>TOTAL</span><b>$345.900</b></div><div class="receipt-qr"></div><small>Gracias por tu compra</small></article>
+                <div class="format-caption"><span class="check-icon" aria-hidden="true">✓</span> PDF y POS electrónico incluidos</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section plan-section" id="planes">
+        <div class="container">
+            <div class="section-heading"><p class="eyebrow">Claro desde el principio</p><h2>Un solo plan, todo incluido</h2><p>Sin cobros por factura ni sorpresas al final del mes.</p></div>
+            <article class="plan-card reveal-card">
+                <div class="plan-main"><span class="plan-tag">PLAN ANUAL</span><h3>Todo para facturar</h3><p>Un año completo de facturación para tu negocio.</p><div class="plan-price"><strong>$345.900</strong><span>/ año</span></div><p class="monthly-price" data-monthly-price data-target="28825">Menos de $29.000 al mes · [IVA incluido / no incluido]</p><a class="button plan-button" href="#comprar">Comprar plan anual <span aria-hidden="true">↗</span></a><small class="plan-footnote">Pago anual único. La pasarela de pago se define próximamente.</small></div>
+                <div class="plan-includes"><h4>Todo incluido en tu plan</h4><ul><li><span class="check-icon">✓</span>Facturas ilimitadas</li><li><span class="check-icon">✓</span>Anulaciones incluidas</li><li><span class="check-icon">✓</span>Formato POS electrónico</li><li><span class="check-icon">✓</span>Múltiples formatos PDF</li></ul><div class="plan-note"><span class="note-icon" aria-hidden="true">i</span><span>Un precio sencillo para que puedas enfocarte en tu negocio.</span></div></div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section faq-section" id="preguntas">
+        <div class="container faq-layout"><div class="faq-intro"><p class="eyebrow">Resolvemos tus dudas</p><h2>Preguntas frecuentes</h2><p>¿Tienes otra pregunta? Escríbenos a <a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a>.</p></div><div class="faq-grid">
+            <article class="faq-card reveal-card"><span class="faq-number">01</span><h3>¿Cuánto cuesta el plan?</h3><p>El plan cuesta $345.900 COP al año e incluye facturas ilimitadas y anulaciones.</p></article>
+            <article class="faq-card reveal-card"><span class="faq-number">02</span><h3>¿Hay un límite de facturas?</h3><p>No. Puedes generar todas las facturas que necesite tu negocio durante el año.</p></article>
+            <article class="faq-card reveal-card"><span class="faq-number">03</span><h3>¿Qué formatos puedo usar?</h3><p>Puedes descargar diferentes diseños PDF o usar la tirilla POS electrónico.</p></article>
+            <article class="faq-card reveal-card"><span class="faq-number">04</span><h3>¿Cómo empiezo a facturar?</h3><p>Crea tus servicios, agrega un cliente o selecciona consumidor final y genera tu factura.</p></article>
+        </div></div>
+    </section>
+
+    <section class="final-cta" id="comprar"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light">Tu negocio, listo para facturar</p><h2>Empieza a facturar sin límites.</h2><p>Todo lo que necesitas en un solo plan anual.</p></div><div class="cta-action"><a class="button button-white" href="#planes">Comprar plan anual <span aria-hidden="true">↗</span></a><span>$345.900 COP / año</span></div><div class="cta-decoration" aria-hidden="true"></div></div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a><p>Facturación simple para tu negocio.</p><div class="footer-contact"><a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a><a href="tel:[TELÉFONO]">[TELÉFONO]</a></div></div><div class="container footer-bottom"><span>© 2026 [TU MARCA]. Todos los derechos reservados.</span><span>Hecho para simplificar tu día a día.</span></div></footer>
+</body>
+</html>
