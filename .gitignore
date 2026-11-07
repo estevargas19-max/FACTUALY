@@ -1,0 +1,33 @@
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+
+# Dependencias de PHP
+/vendor/
+
+# Archivos generados por runtime y logs
+/storage/*
+!/storage/.gitkeep
+*.log
+.phpunit.result.cache
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos temporales de la app
+/tmp/
+*.tmp
+
+# Generados por pruebas o compilación
+coverage/
+build/
+
+# Archivos de subida locales (si se usan en public/)
+/public/uploads/*
+!/public/uploads/.gitkeep
