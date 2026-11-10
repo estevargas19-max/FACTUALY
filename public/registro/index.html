@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/assets/img/simbolo.png">
+    <title>Registro · Factualy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/landing.css?v=3">
+    <link rel="stylesheet" href="/assets/css/registration.css?v=1">
+    <script src="/assets/js/registration.js?v=1" defer></script>
+</head>
+<body class="registration-page">
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Volver al inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="Factualy"></a><a class="registration-back" href="/">Volver al inicio</a></div></header>
+<main class="registration-main">
+    <div class="registration-container">
+        <div class="registration-heading"><p class="eyebrow">Empecemos con tus datos</p><h1>Prepara tu registro</h1><p>Selecciona el tipo de persona y adjunta la información necesaria para configurar tu facturación.</p></div>
+        <form class="registration-form" data-registration-form>
+            <fieldset class="person-choice"><legend>¿Eres persona natural o jurídica?</legend><label class="choice-card"><input type="radio" name="person_type" value="natural" required><span><strong>Persona natural</strong><small>Facturas a tu nombre</small></span></label><label class="choice-card"><input type="radio" name="person_type" value="legal" required><span><strong>Persona jurídica</strong><small>Facturas a nombre de una empresa</small></span></label></fieldset>
+            <section class="person-fields" data-person-fields="natural" hidden>
+                <h2>Datos de persona natural</h2>
+                <div class="form-grid"><label class="field"><span>Teléfono</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Tu número de contacto" required></label><label class="field"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required></label></div>
+                <div class="upload-grid"><label class="upload-field"><span>Resolución electrónica vigente <small>Opcional si no la tienes</small></span><input type="file" name="electronic_resolution_natural" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"><small>PDF, JPG o PNG · máximo 10 MB</small></label><label class="upload-field"><span>Cédula · lado frontal</span><input type="file" name="identity_front_natural" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required><small>JPG o PNG · máximo 5 MB</small></label><label class="upload-field"><span>Cédula · lado posterior</span><input type="file" name="identity_back_natural" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required><small>JPG o PNG · máximo 5 MB</small></label></div>
+                <label class="check-row"><input type="checkbox" name="no_resolution_natural" data-no-resolution="natural"><span>No tengo resolución electrónica vigente</span></label>
+                <div class="credentials-fields" data-credentials="natural" hidden><p>Si no tienes resolución, indica tus datos DIAN para la gestión de facturación.</p><div class="form-grid"><label class="field"><span>Usuario DIAN</span><input type="text" name="dian_username_natural" autocomplete="username"></label><label class="field"><span>Contraseña DIAN</span><input type="password" name="dian_password_natural" autocomplete="off"></label></div></div>
+            </section>
+            <section class="person-fields" data-person-fields="legal" hidden>
+                <h2>Datos de persona jurídica</h2>
+                <div class="upload-grid"><label class="upload-field"><span>RUT</span><input type="file" name="rut" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required><small>PDF, JPG o PNG · máximo 10 MB</small></label><label class="upload-field"><span>Cámara de Comercio <small>Expedida hace menos de 30 días</small></span><input type="file" name="chamber_certificate" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required><small>PDF, JPG o PNG · máximo 10 MB</small></label><label class="upload-field"><span>Resolución electrónica vigente <small>Opcional si no la tienes</small></span><input type="file" name="electronic_resolution_legal" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"><small>PDF, JPG o PNG · máximo 10 MB</small></label><label class="upload-field"><span>Cédula del representante · lado frontal</span><input type="file" name="identity_front_legal" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required><small>JPG o PNG · máximo 5 MB</small></label><label class="upload-field"><span>Cédula del representante · lado posterior</span><input type="file" name="identity_back_legal" accept=".jpg,.jpeg,.png,image/jpeg,image/png" required><small>JPG o PNG · máximo 5 MB</small></label></div>
+                <label class="check-row"><input type="checkbox" name="no_resolution_legal" data-no-resolution="legal"><span>No tengo resolución electrónica vigente</span></label>
+                <div class="credentials-fields" data-credentials="legal" hidden><p>Si no tienes resolución, indica tus datos DIAN para la gestión de facturación.</p><div class="form-grid"><label class="field"><span>Usuario DIAN</span><input type="text" name="dian_username_legal" autocomplete="username"></label><label class="field"><span>Contraseña DIAN</span><input type="password" name="dian_password_legal" autocomplete="off"></label></div></div>
+            </section>
+            <p class="security-note">Esta demostración todavía no envía ni guarda el formulario. La carga segura de documentos y el tratamiento de credenciales deben conectarse antes de usarlo con datos reales.</p>
+            <button class="button registration-submit" type="submit" disabled data-registration-submit>Continuar</button>
+            <p class="form-feedback" data-form-feedback role="status" aria-live="polite">Selecciona el tipo de persona para continuar.</p>
+        </form>
+    </div>
+</main>
+<footer class="site-footer"><div class="container footer-bottom"><span>© 2026 FACTUALY. Todos los derechos reservados.</span><a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a></div></footer>
+</body>
+</html>

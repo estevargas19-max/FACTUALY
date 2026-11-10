@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/landing.css">
-    <script src="/assets/js/landing.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/landing.css?v=3">
+    <script src="/assets/js/landing.js?v=2" defer></script>
 </head>
 <body>
 <header class="site-header">
     <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="[TU MARCA], inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a>
-        <a class="button button-small" href="#planes">Empezar</a>
+        <a class="button button-small" href="/registro/">Empezar</a>
     </div>
 </header>
 
@@ -28,7 +28,7 @@
                 <h1>Factura en tres pasos, <span>sin límites.</span></h1>
                 <p class="hero-description">Un único plan con facturas ilimitadas y anulaciones incluidas. Crea tus servicios, agrega a tu cliente y genera tu factura.</p>
                 <div class="hero-actions">
-                    <a class="button" href="#planes">Comprar plan anual</a>
+                    <a class="button" href="/registro/">Comprar plan anual</a>
                     <a class="button button-secondary" href="#pasos">Ver cómo funciona</a>
                 </div>
                 <div class="hero-price"><strong>$345.900</strong><span>/ año</span><small>Un solo pago anual. Sin límites de facturación.</small></div>
@@ -53,10 +53,13 @@
     <section class="section steps-section" id="pasos">
         <div class="container">
             <div class="section-heading"><p class="eyebrow">Sin complicaciones</p><h2>Así de simple funciona</h2><p>Tres pasos claros para tener tu factura lista.</p></div>
-            <div class="steps-grid">
-                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">01</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V7.8a1.8 1.8 0 0 1 1.8-1.8h4.8l2 2h5.6A1.8 1.8 0 0 1 20 9.8v9.7H4Z"/><path d="M8 13h8M8 16h5"/></svg></span></div><h3>Paso 1<br>Crea tus servicios</h3><p>Agrega lo que ofreces una sola vez y tenlo listo para cada factura.</p><span class="step-link">Tu catálogo, siempre a mano <span aria-hidden="true">→</span></span></article>
-                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">02</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M17 8a3 3 0 0 1 0 6m1.5 1.5a4 4 0 0 1 2 3.5"/></svg></span></div><h3>Paso 2<br>Agrega tu cliente</h3><p>Elige un cliente guardado o factura directamente a consumidor final.</p><span class="step-link">Un cliente nuevo toma segundos <span aria-hidden="true">→</span></span></article>
-                <article class="step-card reveal-card"><div class="step-top"><span class="step-number">03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v5h5M9 13h6M9 16h6"/></svg></span></div><h3>Paso 3<br>Genera tu factura</h3><p>Revisa los detalles y obtén tu factura electrónica en el formato que necesitas.</p><span class="step-link">Lista para descargar y compartir <span aria-hidden="true">→</span></span></article>
+            <div class="steps-carousel" data-steps-carousel aria-roledescription="carrusel">
+                <div class="steps-viewport"><div class="steps-track" data-steps-track>
+                    <article class="step-card step-slide is-active" data-step-slide aria-hidden="false"><div class="step-top"><span class="step-number">01 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V7.8a1.8 1.8 0 0 1 1.8-1.8h4.8l2 2h5.6A1.8 1.8 0 0 1 20 9.8v9.7H4Z"/><path d="M8 13h8M8 16h5"/></svg></span></div><h3>Crea tus servicios</h3><p>Agrega lo que ofreces una sola vez y tenlo listo para cada factura.</p><span class="step-link">Tu catálogo, siempre a mano</span></article>
+                    <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">02 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M17 8a3 3 0 0 1 0 6m1.5 1.5a4 4 0 0 1 2 3.5"/></svg></span></div><h3>Agrega tu cliente</h3><p>Elige un cliente guardado o factura directamente a consumidor final.</p><span class="step-link">Un cliente nuevo toma segundos</span></article>
+                    <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">03 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v5h5M9 13h6M9 16h6"/></svg></span></div><h3>Genera tu factura</h3><p>Revisa los detalles y obtén tu factura electrónica en el formato que necesitas.</p><span class="step-link">Lista para descargar y compartir</span></article>
+                </div></div>
+                <div class="steps-controls"><button class="steps-arrow" type="button" data-step-prev aria-label="Paso anterior">←</button><div class="steps-dots" role="group" aria-label="Elegir paso"><button type="button" data-step-to="0" aria-label="Mostrar paso 1" aria-current="step"></button><button type="button" data-step-to="1" aria-label="Mostrar paso 2"></button><button type="button" data-step-to="2" aria-label="Mostrar paso 3"></button></div><button class="steps-arrow" type="button" data-step-next aria-label="Siguiente paso">→</button><span class="steps-counter" data-steps-counter aria-live="polite">01 / 03</span></div>
             </div>
         </div>
     </section>
@@ -77,7 +80,7 @@
         <div class="container">
             <div class="section-heading"><p class="eyebrow">Claro desde el principio</p><h2>Un solo plan, todo incluido</h2><p>Sin cobros por factura ni sorpresas al final del mes.</p></div>
             <article class="plan-card reveal-card">
-                <div class="plan-main"><span class="plan-tag">PLAN ANUAL</span><h3>Todo para facturar</h3><p>Un año completo de facturación para tu negocio.</p><div class="plan-price"><strong>$345.900</strong><span>/ año</span></div><p class="monthly-price" data-monthly-price data-target="28825">Menos de $29.000 al mes · [IVA incluido / no incluido]</p><a class="button plan-button" href="#comprar">Comprar plan anual</a><small class="plan-footnote">Pago anual único. La pasarela de pago se define próximamente.</small></div>
+                <div class="plan-main"><span class="plan-tag">PLAN ANUAL</span><h3>Todo para facturar</h3><p>Un año completo de facturación para tu negocio.</p><div class="plan-price"><strong>$345.900</strong><span>/ año</span></div><p class="monthly-price" data-monthly-price data-target="28825">Menos de $29.000 al mes · [IVA incluido / no incluido]</p><a class="button plan-button" href="/registro/">Comprar plan anual</a><small class="plan-footnote">Pago anual único. La pasarela de pago se define próximamente.</small></div>
                 <div class="plan-includes"><h4>Todo incluido en tu plan</h4><ul><li><span class="check-icon">✓</span>Facturas ilimitadas</li><li><span class="check-icon">✓</span>Anulaciones incluidas</li><li><span class="check-icon">✓</span>Formato POS electrónico</li><li><span class="check-icon">✓</span>Múltiples formatos PDF</li></ul><div class="plan-note"><span class="note-icon" aria-hidden="true">i</span><span>Un precio sencillo para que puedas enfocarte en tu negocio.</span></div></div>
             </article>
         </div>
@@ -92,7 +95,7 @@
         </div></div>
     </section>
 
-    <section class="final-cta" id="comprar"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light">Tu negocio, listo para facturar</p><h2>Empieza a facturar sin límites.</h2><p>Todo lo que necesitas en un solo plan anual.</p></div><div class="cta-action"><a class="button button-white" href="#planes">Comprar plan anual</a><span>$345.900 COP / año</span></div><div class="cta-decoration" aria-hidden="true"></div></div></section>
+    <section class="final-cta" id="comprar"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light">Tu negocio, listo para facturar</p><h2>Empieza a facturar sin límites.</h2><p>Todo lo que necesitas en un solo plan anual.</p></div><div class="cta-action"><a class="button button-white" href="/registro/">Comprar plan anual</a><span>$345.900 COP / año</span></div><div class="cta-decoration" aria-hidden="true"></div></div></section>
 </main>
 
 <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a><p>Facturación simple para tu negocio.</p><div class="footer-contact"><a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a><a href="tel:[TELÉFONO]">[TELÉFONO]</a></div></div><div class="container footer-bottom"><span>© 2026 FACTUALY. Todos los derechos reservados.</span><span>Hecho para simplificar tu día a día.</span></div></footer>

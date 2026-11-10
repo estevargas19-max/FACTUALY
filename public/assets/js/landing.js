@@ -83,3 +83,62 @@ if (formatShowcase && formatSamples?.length && pointerMotion.matches && !motionP
         });
     });
 }
+const showcaseCards = document.querySelectorAll('.format-showcase .mini-doc, .format-showcase .receipt');
+if (showcaseCards.length === 3 && !motionPreference.matches) {
+    let activeCard = 0;
+    showcaseCards[activeCard].classList.add('spotlight');
+    window.setInterval(() => {
+        showcaseCards.forEach((card) => card.classList.remove('spotlight'));
+        activeCard = (activeCard + 1) % showcaseCards.length;
+        showcaseCards[activeCard].classList.add('spotlight');
+    }, 1700);
+}
+
+const stepsCarousel = document.querySelector('[data-steps-carousel]');
+if (stepsCarousel) {
+    const slides = [...stepsCarousel.querySelectorAll('[data-step-slide]')];
+    const track = stepsCarousel.querySelector('[data-steps-track]');
+    const dots = [...stepsCarousel.querySelectorAll('[data-step-to]')];
+    const counter = stepsCarousel.querySelector('[data-steps-counter]');
+    let currentStep = 0;
+    let autoAdvanceTimer;
+
+    function startAutoAdvance() {
+        window.clearInterval(autoAdvanceTimer);
+        if (!motionPreference.matches) {
+            autoAdvanceTimer = window.setInterval(() => showStep(currentStep + 1), 5000);
+        }
+    }
+
+    function showStep(index) {
+        currentStep = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentStep * 100}%)`;
+        slides.forEach((slide, slideIndex) => {
+            const active = slideIndex === currentStep;
+            slide.setAttribute('aria-hidden', String(!active));
+            slide.classList.toggle('is-active', active);
+            slide.inert = !active;
+        });
+        dots.forEach((dot, dotIndex) => {
+            if (dotIndex === currentStep) dot.setAttribute('aria-current', 'step');
+            else dot.removeAttribute('aria-current');
+        });
+        if (counter) counter.textContent = `${String(currentStep + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    }
+
+    stepsCarousel.querySelector('[data-step-prev]').addEventListener('click', () => { showStep(currentStep - 1); startAutoAdvance(); });
+    stepsCarousel.querySelector('[data-step-next]').addEventListener('click', () => { showStep(currentStep + 1); startAutoAdvance(); });
+    dots.forEach((dot) => dot.addEventListener('click', () => { showStep(Number(dot.dataset.stepTo)); startAutoAdvance(); }));
+    stepsCarousel.addEventListener('pointerenter', () => window.clearInterval(autoAdvanceTimer));
+    stepsCarousel.addEventListener('pointerleave', startAutoAdvance);
+    stepsCarousel.addEventListener('focusin', () => window.clearInterval(autoAdvanceTimer));
+    stepsCarousel.addEventListener('focusout', (event) => { if (!stepsCarousel.contains(event.relatedTarget)) startAutoAdvance(); });
+    motionPreference.addEventListener('change', (event) => { if (event.matches) window.clearInterval(autoAdvanceTimer); else startAutoAdvance(); });
+    stepsCarousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') showStep(currentStep - 1);
+        if (event.key === 'ArrowRight') showStep(currentStep + 1);
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') startAutoAdvance();
+    });
+    showStep(0);
+    startAutoAdvance();
+}
