@@ -13,7 +13,7 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/landing.css?v=3">
-    <script src="/assets/js/landing.js?v=2" defer></script>
+    <script src="/assets/js/landing.js?v=3" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -51,18 +51,21 @@ declare(strict_types=1);
             </div>
         </div>
         <div class="container trust-note"><span class="trust-line"></span><span>Todo lo que necesitas para facturar, en un solo lugar</span><span class="trust-line"></span></div>
+        <div class="container hero-benefits" aria-label="Beneficios incluidos"><div><span class="benefit-check" aria-hidden="true">✓</span><span>Facturas ilimitadas</span></div><div><span class="benefit-check" aria-hidden="true">✓</span><span>Anulaciones incluidas</span></div><div><span class="benefit-check" aria-hidden="true">✓</span><span>PDF y POS electrónico</span></div></div>
     </section>
 
     <section class="section steps-section" id="pasos">
         <div class="container">
             <div class="section-heading"><p class="eyebrow">Sin complicaciones</p><h2>Así de simple funciona</h2><p>Tres pasos claros para tener tu factura lista.</p></div>
-            <div class="steps-carousel" data-steps-carousel aria-roledescription="carrusel">
+            <div class="steps-showcase">
+<div class="steps-carousel" data-steps-carousel aria-roledescription="carrusel">
                 <div class="steps-viewport"><div class="steps-track" data-steps-track>
                     <article class="step-card step-slide is-active" data-step-slide aria-hidden="false"><div class="step-top"><span class="step-number">01 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V7.8a1.8 1.8 0 0 1 1.8-1.8h4.8l2 2h5.6A1.8 1.8 0 0 1 20 9.8v9.7H4Z"/><path d="M8 13h8M8 16h5"/></svg></span></div><h3>Crea tus servicios</h3><p>Agrega lo que ofreces una sola vez y tenlo listo para cada factura.</p><span class="step-link">Tu catálogo, siempre a mano</span></article>
                     <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">02 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M17 8a3 3 0 0 1 0 6m1.5 1.5a4 4 0 0 1 2 3.5"/></svg></span></div><h3>Agrega tu cliente</h3><p>Elige un cliente guardado o factura directamente a consumidor final.</p><span class="step-link">Un cliente nuevo toma segundos</span></article>
                     <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">03 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v5h5M9 13h6M9 16h6"/></svg></span></div><h3>Genera tu factura</h3><p>Revisa los detalles y obtén tu factura electrónica en el formato que necesitas.</p><span class="step-link">Lista para descargar y compartir</span></article>
                 </div></div>
                 <div class="steps-controls"><button class="steps-arrow" type="button" data-step-prev aria-label="Paso anterior">←</button><div class="steps-dots" role="group" aria-label="Elegir paso"><button type="button" data-step-to="0" aria-label="Mostrar paso 1" aria-current="step"></button><button type="button" data-step-to="1" aria-label="Mostrar paso 2"></button><button type="button" data-step-to="2" aria-label="Mostrar paso 3"></button></div><button class="steps-arrow" type="button" data-step-next aria-label="Siguiente paso">→</button><span class="steps-counter" data-steps-counter aria-live="polite">01 / 03</span></div>
+            </div>
             </div>
         </div>
     </section>
@@ -90,7 +93,7 @@ declare(strict_types=1);
     </section>
 
     <section class="section faq-section" id="preguntas">
-        <div class="container faq-layout"><div class="faq-intro"><p class="eyebrow">Resolvemos tus dudas</p><h2>Preguntas frecuentes</h2><p>¿Tienes otra pregunta? Escríbenos a <a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a>.</p></div><div class="faq-grid">
+        <div class="container faq-layout"><div class="faq-intro"><p class="eyebrow">Resolvemos tus dudas</p><h2>Preguntas frecuentes</h2><p>¿Tienes otra pregunta? <a class="whatsapp-link" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">Comunícate con nosotros por WhatsApp</a>.</p></div><div class="faq-grid">
             <article class="faq-card reveal-card"><span class="faq-number">01</span><h3>¿Cuánto cuesta el plan?</h3><p>El plan cuesta $345.900 COP al año e incluye facturas ilimitadas y anulaciones.</p></article>
             <article class="faq-card reveal-card"><span class="faq-number">02</span><h3>¿Hay un límite de facturas?</h3><p>No. Puedes generar todas las facturas que necesite tu negocio durante el año.</p></article>
             <article class="faq-card reveal-card"><span class="faq-number">03</span><h3>¿Qué formatos puedo usar?</h3><p>Puedes descargar diferentes diseños PDF o usar la tirilla POS electrónico.</p></article>
@@ -101,6 +104,6 @@ declare(strict_types=1);
     <section class="final-cta" id="comprar"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light">Tu negocio, listo para facturar</p><h2>Empieza a facturar sin límites.</h2><p>Todo lo que necesitas en un solo plan anual.</p></div><div class="cta-action"><a class="button button-white" href="/registro/">Comprar plan anual</a><span>$345.900 COP / año</span></div><div class="cta-decoration" aria-hidden="true"></div></div></section>
 </main>
 
-<footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a><p>Facturación simple para tu negocio.</p><div class="footer-contact"><a href="mailto:[CORREO DE CONTACTO]">[CORREO DE CONTACTO]</a><a href="tel:[TELÉFONO]">[TELÉFONO]</a></div></div><div class="container footer-bottom"><span>© 2026 FACTUALY. Todos los derechos reservados.</span><span>Hecho para simplificar tu día a día.</span></div></footer>
+<footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a><p>Facturación simple para tu negocio.</p><div class="footer-contact"><a href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">WhatsApp · 3043659999</a><span>Tr 85 64A-15 Villa Luz, Bogotá</span></div></div><div class="container footer-bottom"><span>© 2026 FACTUALY. Todos los derechos reservados.</span><span>Hecho para simplificar tu día a día.</span></div></footer>
 </body>
 </html>

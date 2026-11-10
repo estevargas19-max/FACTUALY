@@ -142,3 +142,37 @@ if (stepsCarousel) {
     showStep(0);
     startAutoAdvance();
 }
+
+const invoiceParts = invoice ? [...invoice.querySelectorAll('.invoice-build-item')] : [];
+let invoiceAssemblyTimer;
+function startInvoiceAssembly() {
+    if (!invoice || invoiceParts.length === 0) return;
+    window.clearInterval(invoiceAssemblyTimer);
+    if (motionPreference.matches) {
+        invoiceParts.forEach((part) => part.classList.add('is-assembled'));
+        return;
+    }
+
+    function assembleInvoice() {
+        invoiceParts.forEach((part) => part.classList.remove('is-assembled'));
+        invoiceParts.forEach((part, index) => {
+            window.setTimeout(() => part.classList.add('is-assembled'), 180 + index * 420);
+        });
+    }
+
+    assembleInvoice();
+    invoiceAssemblyTimer = window.setInterval(assembleInvoice, 6200);
+}
+
+if (invoice) {
+    if (invoice.classList.contains('is-built')) startInvoiceAssembly();
+    else invoice.addEventListener('animationstart', startInvoiceAssembly, { once: true });
+    motionPreference.addEventListener('change', () => {
+        if (motionPreference.matches) {
+            window.clearInterval(invoiceAssemblyTimer);
+            invoiceParts.forEach((part) => part.classList.add('is-assembled'));
+        } else if (invoice.classList.contains('is-built')) {
+            startInvoiceAssembly();
+        }
+    });
+}
