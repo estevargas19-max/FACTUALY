@@ -2468,3 +2468,53 @@ html.theme-light .step-box .preview-add { color: #713BAA; background: rgba(154,9
 @media (max-width: 640px) {
     .brand-logo { width: min(108px, 32vw); height: 37px; }
 }
+
+/* Ajusta todas las tarjetas de información al ancho real del teléfono. */
+@media (max-width: 640px) {
+    .container { width: calc(100% - 24px); }
+    .pricing-card-wrapper { width: 100%; min-width: 0; }
+    .pricing-info-col { min-width: 0; padding: 26px 20px; }
+    .pricing-cost { min-width: 0; flex-wrap: nowrap; gap: 4px; align-items: baseline; }
+    .pricing-cost .currency { flex: 0 0 auto; font-size: 1.65rem; }
+    .pricing-cost .amount {
+        min-width: 0;
+        flex: 0 1 auto;
+        font-size: clamp(2rem, 8.5vw, 2.5rem);
+        letter-spacing: -.05em;
+        white-space: nowrap;
+    }
+    .pricing-cost .period { flex: 0 0 auto; font-size: .76rem; white-space: nowrap; }
+    .pricing-features-list li { min-width: 0; align-items: flex-start; line-height: 1.45; }
+    .pricing-features-list .check-mark { flex: 0 0 14px; padding-top: 1px; }
+    .bento-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .bento-card {
+        width: 100%;
+        min-width: 0;
+        padding: clamp(20px, 6vw, 26px) clamp(16px, 5vw, 22px);
+        overflow: hidden;
+    }
+    .bento-card > *, .bento-invoices-preview, .mini-doc-preview { min-width: 0; max-width: 100%; }
+    .bento-invoices-preview { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .mini-doc-top { min-width: 0; gap: 6px; flex-wrap: wrap; }
+    .mini-doc-rows div { min-width: 0; gap: 8px; }
+    .mini-doc-rows span { min-width: 0; overflow-wrap: anywhere; }
+    .mini-doc-rows b { flex: 0 0 auto; white-space: nowrap; }
+    .format-segmented-tabs {
+        display: grid;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        overflow: visible;
+        border-radius: 16px;
+    }
+    .format-segmented-tabs .tab-btn {
+        min-width: 0;
+        min-height: 44px;
+        padding: 6px 8px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+    .step-box, .pricing-card-wrapper, .faq-item, .integration-flow { min-width: 0; max-width: 100%; }
+    .integration-flow > * { min-width: 0; max-width: 100%; }
+}
