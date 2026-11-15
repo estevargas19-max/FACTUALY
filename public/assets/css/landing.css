@@ -2520,8 +2520,15 @@ html.theme-light .footer-legal-links a:hover { color: #773DB5; }
     .site-nav .nav-link:hover { background: rgba(255,255,255,.08); }
 }
 @media (max-width: 380px) {
-    .brand-logo { width: min(98px, 30vw); height: 34px; }
-    .button-header { padding-inline: 10px; font-size: .76rem; }
+    .header-actions { gap: 6px; flex: 0 0 auto; }
+    .brand { min-width: 0; flex: 0 1 auto; }
+    .brand-logo { width: min(90px, 28vw); height: 34px; }
+    .button-header { padding-inline: 8px; font-size: .72rem; }
+}
+@media (max-width: 340px) {
+    .brand-logo { width: min(78px, 25vw); height: 30px; }
+    .header-actions { gap: 5px; }
+    .button-header { padding-inline: 6px; font-size: .68rem; }
 }
 html.theme-light .theme-toggle, html.theme-light .menu-toggle {
     color: #29354A;
