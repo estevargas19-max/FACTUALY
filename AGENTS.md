@@ -109,7 +109,7 @@ Referencia visual aprobada: https://claude.ai/artifact/KYk5qn3BF4RNUyLcqM8jdE (m
 - Accesibilidad: contraste mínimo 4.5:1, botones y enlaces reales (`<button>`, `<a>`), etiquetas en los campos, objetivos táctiles de al menos 44 px, `alt` en imágenes.
 - Animaciones: sutiles y ligeras (aparición al hacer scroll, hover en tarjetas, factura de ejemplo que se arma, precio mensual que cuenta hacia arriba). **Respetar `prefers-reduced-motion`.** No bloquear el renderizado ni cargar librerías pesadas sin necesidad.
 - Sin emojis como íconos: usar SVG en línea.
-- Textos pendientes entre corchetes (`[TU MARCA]`, `[IVA incluido / no incluido]`, `[CORREO DE CONTACTO]`, `[TELÉFONO]`) se dejan tal cual hasta que el usuario los defina. No inventes cifras ni afirmaciones legales.
+- Textos pendientes entre corchetes (`[TU MARCA]`, `[CORREO DE CONTACTO]`, `[TELÉFONO]`) se dejan tal cual hasta que el usuario los defina. No inventes cifras ni afirmaciones legales.
 
 ## 9. Cómo trabajar con el usuario
 

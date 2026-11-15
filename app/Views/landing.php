@@ -12,7 +12,7 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/landing.css?v=23">
+    <link rel="stylesheet" href="/assets/css/landing.css?v=26">
     <script src="/assets/js/landing.js?v=10" defer></script>
 </head>
 <body>
@@ -47,8 +47,8 @@ declare(strict_types=1);
                 <h1>Facturación electrónica simple para negocios en Colombia</h1>
                 <p class="hero-description">Crea tu catálogo, elige a tu cliente y factura en segundos. PDF o tirilla POS, desde tu celular. Menos trámites. Más negocio.</p>
                 <div class="hero-actions">
-                    <a class="button button-primary" href="/registro/">Comenzar por $345.900/año</a>
-                    <a class="button button-secondary" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+                    <a class="button button-primary" href="/registro/">Adquiere tu licencia</a>
+                    <a class="button button-secondary" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">Contáctanos</a>
                 </div>
                 <div class="hero-trust-row" aria-label="Garantías del servicio">
                     <div class="trust-item"><span class="trust-check">✓</span><span>Pago único anual</span></div>
@@ -448,7 +448,7 @@ declare(strict_types=1);
                         <strong class="amount">345.900</strong>
                         <span class="period">COP / año</span>
                     </div>
-                    <div class="pricing-vat-pill">[IVA incluido / no incluido]</div>
+                    <div class="pricing-vat-pill">IVA incluido</div>
                     
                     <ul class="pricing-features-list">
                         <li><span class="check-mark">✓</span> Un solo pago anual</li>
@@ -495,7 +495,7 @@ declare(strict_types=1);
                         <span class="faq-icon" aria-hidden="true">−</span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Pagas una sola vez $345.900 COP por un año de servicio, con facturas ilimitadas y anulaciones incluidas. El tratamiento del IVA está pendiente de confirmación [IVA incluido / no incluido].</p>
+                        <p>Pagas una sola vez $345.900 COP por un año de servicio, con facturas ilimitadas y anulaciones incluidas. El precio incluye IVA.</p>
                     </div>
                 </details>
 
@@ -541,7 +541,7 @@ declare(strict_types=1);
     <div class="container footer-content">
         <div class="footer-left">
             <div class="footer-brand">
-                <strong>[TU MARCA] - Factualy</strong>
+                <strong>Factualy</strong>
             </div>
             <p class="footer-address">Tr 85 64A-15 Villa Luz, Bogotá</p>
             <p class="footer-sub">Facturación electrónica para negocios en Colombia.</p>
