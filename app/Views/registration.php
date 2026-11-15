@@ -11,12 +11,13 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/landing.css?v=3">
-    <link rel="stylesheet" href="/assets/css/registration.css?v=1">
+    <link rel="stylesheet" href="/assets/css/landing.css?v=23">
+    <link rel="stylesheet" href="/assets/css/registration.css?v=6">
+    <script src="/assets/js/landing.js?v=10" defer></script>
     <script src="/assets/js/registration.js?v=1" defer></script>
 </head>
 <body class="registration-page">
-<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Volver al inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="Factualy"></a><a class="registration-back" href="/">Volver al inicio</a></div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Volver al inicio"><img class="brand-logo" src="/assets/img/logoc.png" alt="Factualy"></a><div class="header-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg></button><a class="registration-back" href="/">Volver al inicio</a></div></div></header>
 <main class="registration-main">
     <div class="registration-container">
         <div class="registration-heading"><p class="eyebrow">Empecemos con tus datos</p><h1>Prepara tu registro</h1><p>Selecciona el tipo de persona y adjunta la información necesaria para configurar tu facturación.</p></div>
@@ -36,7 +37,6 @@ declare(strict_types=1);
                 <label class="check-row"><input type="checkbox" name="no_resolution_legal" data-no-resolution="legal"><span>No tengo resolución electrónica vigente</span></label>
                 <div class="credentials-fields" data-credentials="legal" hidden><p>Si no tienes resolución, indica tus datos DIAN para la gestión de facturación.</p><div class="form-grid"><label class="field"><span>Usuario DIAN</span><input type="text" name="dian_username_legal" autocomplete="username"></label><label class="field"><span>Contraseña DIAN</span><input type="password" name="dian_password_legal" autocomplete="off"></label></div></div>
             </section>
-            <p class="security-note">Esta demostración todavía no envía ni guarda el formulario. La carga segura de documentos y el tratamiento de credenciales deben conectarse antes de usarlo con datos reales.</p>
             <button class="button registration-submit" type="submit" disabled data-registration-submit>Continuar</button>
             <p class="form-feedback" data-form-feedback role="status" aria-live="polite">Selecciona el tipo de persona para continuar.</p>
         </form>

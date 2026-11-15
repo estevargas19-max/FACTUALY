@@ -1,1 +1,92 @@
 .registration-page{min-height:100vh;background:linear-gradient(180deg,#fff 0,#F7F9FC 50%,#fff 100%)}.registration-page .site-header{position:relative}.registration-back{color:var(--muted);font-size:.88rem;text-decoration:none}.registration-main{padding:56px 0 80px}.registration-container{width:min(100% - 2*var(--space),820px);margin:0 auto}.registration-heading{max-width:620px;margin:0 auto 32px;text-align:center}.registration-heading h1{margin:0 0 10px;font-size:clamp(2.3rem,7vw,3.5rem);line-height:1.1;letter-spacing:-.06em}.registration-heading>p:last-child{color:var(--muted)}.registration-form{padding:clamp(20px,5vw,40px);border:1px solid var(--border);border-radius:22px;background:#fff;box-shadow:0 22px 65px rgba(15,27,45,.08)}.person-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 30px;padding:0;border:0}.person-choice legend{grid-column:1/-1;margin-bottom:12px;font-family:"Space Grotesk",sans-serif;font-size:1.2rem;font-weight:700}.choice-card{min-height:84px;display:flex;align-items:center;gap:12px;padding:15px;border:1px solid var(--border);border-radius:14px;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}.choice-card:has(input:checked){border-color:#ff3131;background:#FFF5F5;box-shadow:0 0 0 3px rgba(255,49,49,.08)}.choice-card input,.check-row input{width:18px;height:18px;accent-color:#ff3131;flex:0 0 auto}.choice-card strong,.choice-card small{display:block}.choice-card strong{font-size:.9rem}.choice-card small{margin-top:2px;color:var(--muted);font-size:.73rem}.person-fields{padding-top:25px;border-top:1px solid var(--border)}.person-fields h2{margin-bottom:20px;font-size:1.45rem}.form-grid,.upload-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field,.upload-field{display:grid;align-content:start;gap:7px}.field>span,.upload-field>span{font-size:.84rem;font-weight:650}.field input{min-height:48px;width:100%;padding:10px 12px;border:1px solid #D6DEE9;border-radius:10px;font:inherit;font-size:.88rem}.field input:focus,.upload-field input:focus-visible{outline:3px solid rgba(255,49,49,.16);border-color:#ff3131}.upload-grid{margin-top:18px}.upload-field{min-height:123px;padding:15px;border:1px dashed #C9D3E1;border-radius:13px;background:#FBFCFE}.upload-field>span small{display:block;color:var(--muted);font-size:.72rem;font-weight:400}.upload-field input{width:100%;font-size:.75rem}.upload-field>small{color:var(--muted);font-size:.68rem}.check-row{display:flex;align-items:center;gap:9px;margin-top:20px;font-size:.84rem;cursor:pointer}.credentials-fields{margin-top:16px;padding:18px;border-radius:13px;background:#FFF7F7;border:1px solid #F5D3D3}.credentials-fields p{margin-bottom:14px;color:#773434;font-size:.82rem}.security-note{margin:25px 0 16px;padding:14px 16px;border-left:3px solid #ff3131;border-radius:0 10px 10px 0;background:#FFF5F5;color:#653B3B;font-size:.78rem}.registration-submit{width:100%;min-height:52px}.registration-submit:disabled{cursor:not-allowed;opacity:.48;box-shadow:none;animation:none}.form-feedback{min-height:22px;margin:12px 0 0;color:var(--muted);font-size:.78rem;text-align:center}.registration-page .site-footer{padding:18px 0}.registration-page .footer-bottom{padding-top:0;border:0}@media(max-width:600px){.registration-main{padding-top:38px}.person-choice{grid-template-columns:1fr}.form-grid,.upload-grid{grid-template-columns:1fr}.registration-form{border-radius:17px}.choice-card{min-height:72px}}
+
+/* El formulario comparte el tema oscuro de la landing. */
+.registration-page {
+    color-scheme: dark;
+    background: radial-gradient(ellipse at 50% 0%, rgba(63, 111, 210, .2), transparent 38rem), #080D16;
+    color: #F5F7FC;
+}
+.registration-page .site-header { background: rgba(8, 13, 22, .72); }
+.registration-form, .choice-card, .upload-field, .credentials-fields, .security-note {
+    color: #F5F7FC;
+    background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.045));
+    border-color: rgba(210,225,255,.16);
+    box-shadow: inset 0 1px rgba(255,255,255,.12), 0 20px 60px rgba(0,0,0,.24);
+    -webkit-backdrop-filter: saturate(170%) blur(22px);
+    backdrop-filter: saturate(170%) blur(22px);
+}
+.choice-card:has(input:checked) { background: rgba(255, 83, 91, .13); border-color: #FF666B; }
+.field input { color: #F5F7FC; background: rgba(5, 10, 18, .48); border-color: rgba(210,225,255,.2); }
+.field input::placeholder { color: #AAB8CC; }
+.credentials-fields p, .security-note { color: #E3CED0; }
+.credentials-fields { background: rgba(255, 83, 91, .08); }
+.security-note { background: rgba(255, 83, 91, .09); }
+.upload-field input { color: #D8E2F2; }
+.registration-page .site-footer { background: transparent; color: #B0BDD0; }
+
+html.theme-light .registration-page {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F4F7FB 52%, #FFFFFF 100%);
+    color: #0F1B2D;
+}
+html.theme-light .registration-page .site-header { background: rgba(255,255,255,.78); }
+html.theme-light .registration-form, html.theme-light .choice-card,
+html.theme-light .upload-field, html.theme-light .credentials-fields,
+html.theme-light .security-note {
+    color: #0F1B2D;
+    background: rgba(255,255,255,.88);
+    border-color: #E2E8F0;
+    box-shadow: 0 16px 44px rgba(15,27,45,.06);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    backdrop-filter: saturate(140%) blur(14px);
+}
+html.theme-light .choice-card:has(input:checked) { background: #FFF5F5; border-color: #FF3131; }
+html.theme-light .field input { color: #0F1B2D; background: #fff; border-color: #D6DEE9; }
+html.theme-light .credentials-fields { background: #FFF7F7; }
+html.theme-light .credentials-fields p, html.theme-light .security-note { color: #653B3B; }
+html.theme-light .security-note { background: #FFF5F5; }
+html.theme-light .registration-page .site-footer { color: #4A5A70; }
+html.theme-light .registration-form, html.theme-light .choice-card,
+html.theme-light .upload-field, html.theme-light .credentials-fields,
+html.theme-light .security-note {
+    background-image: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,255,255,.64) 44%, rgba(250,245,255,.72));
+    border-color: rgba(255,255,255,.9);
+    box-shadow: inset 0 1px rgba(255,255,255,1), inset 0 -1px rgba(139,166,207,.12), 0 18px 48px rgba(74,48,100,.09);
+    -webkit-backdrop-filter: saturate(180%) blur(26px);
+    backdrop-filter: saturate(180%) blur(26px);
+}
+html.theme-light .credentials-fields, html.theme-light .security-note {
+    background-image: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,245,245,.78));
+}
+html:not(.theme-light) .registration-form, html:not(.theme-light) .choice-card,
+html:not(.theme-light) .upload-field, html:not(.theme-light) .credentials-fields,
+html:not(.theme-light) .security-note {
+    background-image: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.018));
+    background-color: rgba(13,22,37,.16);
+    -webkit-backdrop-filter: saturate(190%) blur(32px);
+    backdrop-filter: saturate(190%) blur(32px);
+}
+html.theme-light .registration-form, html.theme-light .choice-card,
+html.theme-light .upload-field, html.theme-light .credentials-fields,
+html.theme-light .security-note {
+    background-image: linear-gradient(135deg, rgba(255,255,255,.5), rgba(255,255,255,.2) 50%, rgba(235,222,250,.27));
+    background-color: rgba(255,255,255,.14);
+    -webkit-backdrop-filter: saturate(200%) blur(34px);
+    backdrop-filter: saturate(200%) blur(34px);
+}
+html.theme-light .credentials-fields, html.theme-light .security-note {
+    background-image: linear-gradient(135deg, rgba(255,255,255,.45), rgba(255,238,238,.28));
+}
+html:not(.theme-light) .choice-card:has(input:checked) { border-color: #B985F0; background: rgba(154,91,222,.16); }
+html:not(.theme-light) .choice-card input, html:not(.theme-light) .check-row input { accent-color: #9A5BDE; }
+html:not(.theme-light) .field input:focus { outline-color: rgba(154,91,222,.3); border-color: #B985F0; }
+html:not(.theme-light) .security-note { border-left-color: #9A5BDE; }
+html.theme-light .choice-card:has(input:checked) { border-color: #9A5BDE; background: rgba(154,91,222,.1); }
+html.theme-light .choice-card input, html.theme-light .check-row input { accent-color: #9A5BDE; }
+html.theme-light .field input:focus { outline-color: rgba(154,91,222,.2); border-color: #9A5BDE; }
+html.theme-light .security-note { border-left-color: #9A5BDE; }
+html:not(.theme-light) .registration-page {
+    background: radial-gradient(ellipse at 50% 0%, rgba(154,91,222,.2), transparent 38rem), #0C0B10;
+}
+html.theme-light .registration-page {
+    background: radial-gradient(ellipse at 50% 0%, rgba(154,91,222,.1), transparent 38rem), linear-gradient(180deg,#fff 0,#F7F4FB 52%,#fff 100%);
+}

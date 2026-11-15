@@ -4,103 +4,563 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/assets/img/simbolo.png">
-    <meta name="description" content="Facturación electrónica sencilla: servicios, clientes y facturas ilimitadas en un solo plan anual.">
-    <title>Factualy - Facturacion electronica</title>
+    <meta name="description" content="Facturación electrónica sencilla para negocios en Colombia: servicios, clientes y facturas ilimitadas en un solo plan anual.">
+    <title>Factualy · Facturación electrónica simple en Colombia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/landing.css?v=3">
-    <script src="/assets/js/landing.js?v=3" defer></script>
+    <link rel="stylesheet" href="/assets/css/landing.css?v=23">
+    <script src="/assets/js/landing.js?v=10" defer></script>
 </head>
 <body>
+
+<!-- Header / Barra de Navegación -->
 <header class="site-header">
     <div class="container header-inner">
-        <a class="brand" href="#inicio" aria-label="[TU MARCA], inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a>
-        <a class="button button-small" href="/registro/">Empezar</a>
+        <a class="brand" href="#inicio" aria-label="Factualy, inicio">
+            <img class="brand-logo" src="/assets/img/logoc.png" alt="Factualy">
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a class="nav-link" href="#pasos">Cómo funciona</a>
+            <a class="nav-link" href="#caracteristicas">Todo incluido</a>
+            <a class="nav-link" href="#precio">Precio</a>
+            <a class="nav-link" href="#preguntas">Preguntas</a>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+                <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+                <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
+            </button>
+            <a class="button button-header" href="/registro/">Empezar ahora</a>
+        </div>
     </div>
 </header>
 
 <main>
+    <!-- HERO SECTION -->
     <section class="hero section" id="inicio">
         <div class="container hero-grid">
             <div class="hero-copy">
-                <p class="eyebrow"><span class="eyebrow-dot"></span> Facturación electrónica simple</p>
-                <h1>Factura en tres pasos, <span>sin límites.</span></h1>
-                <p class="hero-description">Un único plan con facturas ilimitadas y anulaciones incluidas. Crea tus servicios, agrega a tu cliente y genera tu factura.</p>
+                <h1>Facturación electrónica simple para negocios en Colombia</h1>
+                <p class="hero-description">Crea tu catálogo, elige a tu cliente y factura en segundos. PDF o tirilla POS, desde tu celular. Menos trámites. Más negocio.</p>
                 <div class="hero-actions">
-                    <a class="button" href="/registro/">Comprar plan anual</a>
-                    <a class="button button-secondary" href="#pasos">Ver cómo funciona</a>
+                    <a class="button button-primary" href="/registro/">Comenzar por $345.900/año</a>
+                    <a class="button button-secondary" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
                 </div>
-                <div class="hero-price"><strong>$345.900</strong><span>/ año</span><small>Un solo pago anual. Sin límites de facturación.</small></div>
+                <div class="hero-trust-row" aria-label="Garantías del servicio">
+                    <div class="trust-item"><span class="trust-check">✓</span><span>Pago único anual</span></div>
+                    <div class="trust-item"><span class="trust-check">✓</span><span>Facturas ilimitadas</span></div>
+                    <div class="trust-item"><span class="trust-check">✓</span><span>Anulaciones incluidas</span></div>
+                </div>
             </div>
-            <div class="invoice-scene" aria-label="Vista previa de una factura electrónica de ejemplo">
-                <div class="scene-orbit orbit-one"></div><div class="scene-orbit orbit-two"></div>
-                <article class="invoice-card" data-invoice-animation>
-                    <div class="invoice-top"><div class="invoice-brand"><img class="invoice-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><small>Factura electrónica</small></div><span class="invoice-status"><span></span> Emitida</span></div>
-                    <div class="invoice-number invoice-build-item"><span>FACTURA DE VENTA</span><strong>No. FV-000128</strong></div>
-                    <div class="invoice-rule"></div>
-                    <div class="invoice-meta invoice-build-item"><div><small>CLIENTE</small><strong>Comercial La Esquina</strong><span>NIT 900.123.456-7</span></div><div><small>FECHA</small><strong>07 nov 2026</strong><span>Vencimiento: 07 dic 2026</span></div></div>
-                    <div class="invoice-lines invoice-build-item"><div class="invoice-line line-heading"><span>Descripción</span><span>Total</span></div><div class="invoice-line"><span>Consultoría mensual<small>1 servicio</small></span><strong>$280.000</strong></div><div class="invoice-line"><span>Soporte técnico<small>2 horas</small></span><strong>$65.900</strong></div></div>
-                    <div class="invoice-total invoice-build-item"><span>Total a pagar</span><strong>$345.900</strong></div>
-                    <div class="invoice-footer invoice-build-item"><span>Representación gráfica de factura electrónica</span><span class="qr-placeholder" aria-label="Código QR de ejemplo"></span></div>
-                </article>
-                <div class="float-note"><span class="check-icon" aria-hidden="true">✓</span><span><strong>Lista para compartir</strong><small>PDF · POS electrónico</small></span></div>
+
+            <div class="hero-visual">
+                <div class="product-showcase" id="hero-showcase" aria-label="Demostración interactiva de factura electrónica en celular y formato tirilla POS">
+                    <div class="showcase-surface" aria-hidden="true"></div>
+                    
+                    <!-- Notificación flotante superior -->
+                    <div class="showcase-toast" aria-hidden="true">
+                        <span class="toast-check">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#0E7C66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="toast-text">Factura <strong>FE-1042</strong> generada en segundos</span>
+                    </div>
+
+                    <!-- Escenario 3D interactivo con celular y factura física -->
+                    <div class="showcase-stage" data-active="phone">
+                        
+                        <!-- Elemento 1: Celular (iPhone 16 Pro) -->
+                        <div class="showcase-item showcase-phone" data-card="phone" aria-label="Factura electrónica en pantalla de celular">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <div class="phone-status-bar" aria-hidden="true">
+                                        <span class="status-time">9:41</span>
+                                        <span class="dynamic-island"></span>
+                                        <span class="status-icons">
+                                            <svg width="14" height="10" viewBox="0 0 15 11" fill="currentColor">
+                                                <path d="M1 8.5h2v2H1zm3.5-3h2v5h-2zm3.5-3h2v8h-2zm3.5-2.5h2v10.5h-2z"/>
+                                            </svg>
+                                            <svg width="16" height="9" viewBox="0 0 18 10" fill="currentColor">
+                                                <rect x="0.5" y="0.5" width="14" height="9" rx="2.5" stroke="currentColor" fill="none"/>
+                                                <rect x="2" y="2" width="10" height="6" rx="1.5"/>
+                                                <path d="M16 3.5v3" stroke="currentColor" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="phone-header" aria-hidden="true">
+                                        <span class="phone-back">
+                                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+                                                <path d="M7 1L1 7L7 13" stroke="#0071E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span class="phone-title">Vista previa</span>
+                                    </div>
+                                    <div class="phone-invoice-card">
+                                        <div class="phone-brand-row">
+                                            <div class="phone-brand-title">CASA OLIVA</div>
+                                            <div class="phone-brand-sub">NIT 901.234.567-8 · Bogotá D. C.</div>
+                                        </div>
+                                        <div class="phone-rule"></div>
+                                        <div class="phone-doc-type">FACTURA ELECTRÓNICA DE VENTA</div>
+                                        <div class="phone-doc-number">FE-1042</div>
+                                        <div class="phone-doc-date">15 nov 2026 · 10:42 a. m.</div>
+                                        <div class="phone-rule"></div>
+                                        <div class="phone-billed-to">
+                                            <span class="billed-label">FACTURADO A</span>
+                                            <span class="billed-name">Consumidor Final</span>
+                                            <span class="billed-id">NIT / identificación: 222222222222</span>
+                                        </div>
+                                        <div class="phone-rule"></div>
+                                        <div class="phone-items-table">
+                                            <div class="phone-table-head">
+                                                <span>DESCRIPCIÓN</span>
+                                                <span class="text-right">TOTAL</span>
+                                            </div>
+                                            <div class="phone-item-row">
+                                                <span>Café de origen · 2 × $25.000</span>
+                                                <strong class="text-right">$50.000</strong>
+                                            </div>
+                                            <div class="phone-item-row">
+                                                <span>Torta artesanal · 1 × $20.000</span>
+                                                <strong class="text-right">$20.000</strong>
+                                            </div>
+                                            <div class="phone-item-sub">
+                                                <span>Subtotal</span>
+                                                <span class="text-right">$70.000</span>
+                                            </div>
+                                            <div class="phone-item-sub">
+                                                <span>IVA (19 %)</span>
+                                                <span class="text-right">$13.300</span>
+                                            </div>
+                                        </div>
+                                        <div class="phone-total-card">
+                                            <span>Total COP</span>
+                                            <strong>$83.300</strong>
+                                        </div>
+                                        <div class="phone-qr-footer">
+                                            <svg class="phone-qr-svg" width="34" height="34" viewBox="0 0 38 38" fill="none">
+                                                <rect width="38" height="38" rx="4" fill="#FFFFFF"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4h10v10H4V4zm2 2v6h6V6H6zm18-2h10v10H24V4zm2 2v6h6V6h-6zM4 24h10v10H4V24zm2 2v6h6v-6H6zm14-16h4v4h-4V10zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-4h4v4h-4v-4zm-4 8h4v4h-4v-4zm4 4h4v4h-4v-4zm-8 4h4v4h-4v-4zm-4-8h4v4h-4v-4z" fill="#0F1B2D"/>
+                                            </svg>
+                                            <span class="phone-qr-text">Representación de ejemplo. QR y datos de prueba.</span>
+                                        </div>
+                                    </div>
+                                    <div class="phone-home-bar" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elemento 2: Factura física (Tirilla POS Electrónico) -->
+                        <div class="showcase-item showcase-receipt" data-card="receipt" aria-label="Formato de factura POS electrónico">
+                            <div class="receipt-inner">
+                                <div class="receipt-header">
+                                    <strong class="receipt-brand">CASA OLIVA</strong>
+                                    <span class="receipt-subtitle">Formato POS Electrónico</span>
+                                    <span class="receipt-id">Tirilla · FE-1042</span>
+                                </div>
+                                <div class="receipt-divider"></div>
+                                <div class="receipt-meta">
+                                    <div>Consumidor Final</div>
+                                    <div>222222222222</div>
+                                </div>
+                                <div class="receipt-divider"></div>
+                                <div class="receipt-items">
+                                    <div class="receipt-row"><span>Café de origen</span><span>$50.000</span></div>
+                                    <div class="receipt-row"><span>Torta artesanal</span><span>$20.000</span></div>
+                                    <div class="receipt-row receipt-sub"><span>Subtotal</span><span>$70.000</span></div>
+                                    <div class="receipt-row receipt-sub"><span>IVA 19 %</span><span>$13.300</span></div>
+                                </div>
+                                <div class="receipt-divider"></div>
+                                <div class="receipt-total-box">
+                                    <small>TOTAL COP</small>
+                                    <strong>$83.300</strong>
+                                </div>
+                                <div class="receipt-footer">
+                                    <svg class="receipt-qr-svg" width="30" height="30" viewBox="0 0 38 38" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4h10v10H4V4zm2 2v6h6V6H6zm18-2h10v10H24V4zm2 2v6h6V6h-6zM4 24h10v10H4V24zm2 2v6h6v-6H6zm14-16h4v4h-4V10zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-4h4v4h-4v-4zm-4 8h4v4h-4v-4zm4 4h4v4h-4v-4zm-8 4h4v4h-4v-4zm-4-8h4v4h-4v-4z" fill="#0F1B2D"/>
+                                    </svg>
+                                    <span>Tirilla POS autorizada</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                <div class="hero-caption-note">Genera tu factura en un clic · Sin complicaciones</div>
             </div>
         </div>
-        <div class="container trust-note"><span class="trust-line"></span><span>Todo lo que necesitas para facturar, en un solo lugar</span><span class="trust-line"></span></div>
-        <div class="container hero-benefits" aria-label="Beneficios incluidos"><div><span class="benefit-check" aria-hidden="true">✓</span><span>Facturas ilimitadas</span></div><div><span class="benefit-check" aria-hidden="true">✓</span><span>Anulaciones incluidas</span></div><div><span class="benefit-check" aria-hidden="true">✓</span><span>PDF y POS electrónico</span></div></div>
     </section>
 
+    <!-- SECCIÓN PASOS: Tu próxima factura, en tres pasos -->
     <section class="section steps-section" id="pasos">
         <div class="container">
-            <div class="section-heading"><p class="eyebrow">Sin complicaciones</p><h2>Así de simple funciona</h2><p>Tres pasos claros para tener tu factura lista.</p></div>
-            <div class="steps-showcase">
-<div class="steps-carousel" data-steps-carousel aria-roledescription="carrusel">
-                <div class="steps-viewport"><div class="steps-track" data-steps-track>
-                    <article class="step-card step-slide is-active" data-step-slide aria-hidden="false"><div class="step-top"><span class="step-number">01 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5V7.8a1.8 1.8 0 0 1 1.8-1.8h4.8l2 2h5.6A1.8 1.8 0 0 1 20 9.8v9.7H4Z"/><path d="M8 13h8M8 16h5"/></svg></span></div><h3>Crea tus servicios</h3><p>Agrega lo que ofreces una sola vez y tenlo listo para cada factura.</p><span class="step-link">Tu catálogo, siempre a mano</span></article>
-                    <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">02 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M17 8a3 3 0 0 1 0 6m1.5 1.5a4 4 0 0 1 2 3.5"/></svg></span></div><h3>Agrega tu cliente</h3><p>Elige un cliente guardado o factura directamente a consumidor final.</p><span class="step-link">Un cliente nuevo toma segundos</span></article>
-                    <article class="step-card step-slide" data-step-slide aria-hidden="true"><div class="step-top"><span class="step-number">03 / 03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v5h5M9 13h6M9 16h6"/></svg></span></div><h3>Genera tu factura</h3><p>Revisa los detalles y obtén tu factura electrónica en el formato que necesitas.</p><span class="step-link">Lista para descargar y compartir</span></article>
-                </div></div>
-                <div class="steps-controls"><button class="steps-arrow" type="button" data-step-prev aria-label="Paso anterior">←</button><div class="steps-dots" role="group" aria-label="Elegir paso"><button type="button" data-step-to="0" aria-label="Mostrar paso 1" aria-current="step"></button><button type="button" data-step-to="1" aria-label="Mostrar paso 2"></button><button type="button" data-step-to="2" aria-label="Mostrar paso 3"></button></div><button class="steps-arrow" type="button" data-step-next aria-label="Siguiente paso">→</button><span class="steps-counter" data-steps-counter aria-live="polite">01 / 03</span></div>
+            <div class="section-header-split">
+                <div class="header-left">
+                    <p class="kicker">PASO SIMPLE</p>
+                    <h2>Tu próxima factura,<br>en tres pasos.</h2>
+                </div>
+                <div class="header-right">
+                    <p class="section-lead">Del primer producto al último clic. Todo fluye.</p>
+                </div>
             </div>
+
+            <div class="steps-grid-cards">
+                <!-- Paso 1 -->
+                <article class="step-box">
+                    <div class="step-badge-num">01</div>
+                    <h3>Crea tus servicios<br>o productos</h3>
+                    <div class="step-preview-box">
+                        <div class="preview-mini-list">
+                            <div class="preview-item"><span>Café de origen</span><strong>$25.000</strong></div>
+                            <div class="preview-item"><span>Torta artesanal</span><strong>$20.000</strong></div>
+                            <div class="preview-item"><span>Servicio de consultoría</span><strong>$120.000</strong></div>
+                        </div>
+                        <div class="preview-footer-actions">
+                            <span class="preview-tag">Productos</span>
+                            <span class="preview-tag">Servicios</span>
+                            <span class="preview-tag preview-add">+ Nuevo ítem</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paso 2 -->
+                <article class="step-box">
+                    <div class="step-badge-num">02</div>
+                    <h3>Elige un cliente o<br>Consumidor Final</h3>
+                    <div class="step-preview-box">
+                        <div class="preview-search-input">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <span>Buscar por nombre o NIT</span>
+                        </div>
+                        <div class="preview-chips-row">
+                            <span class="preview-chip">María Ochoa</span>
+                            <span class="preview-chip">David Silva</span>
+                        </div>
+                        <div class="preview-active-client">
+                            <div class="client-check-icon">✓</div>
+                            <div>
+                                <strong>Consumidor Final</strong>
+                                <small>Cliente rápido · En un toque</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paso 3 -->
+                <article class="step-box">
+                    <div class="step-badge-num">03</div>
+                    <h3>Genera tu factura<br>electrónica</h3>
+                    <div class="step-preview-box">
+                        <div class="preview-success-pill">
+                            <span>Factura emitida con éxito</span>
+                            <span class="check-small">✓</span>
+                        </div>
+                        <div class="preview-download-buttons">
+                            <div class="preview-btn-row"><span>Descargar PDF</span> <span>↗</span></div>
+                            <div class="preview-btn-row"><span>Imprimir tirilla POS</span> <span>↗</span></div>
+                            <div class="preview-btn-row"><span>Compartir por WhatsApp</span> <span>↗</span></div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="section formats-section" id="formatos">
-        <div class="container formats-grid">
-            <div class="formats-copy"><p class="eyebrow">Presentación profesional</p><h2>El formato que tu negocio necesita</h2><p>Elige entre varios diseños PDF para compartir con tus clientes o usa el formato POS electrónico para una impresión compacta.</p><a class="text-link" href="#planes">Conoce el plan completo <span aria-hidden="true">→</span></a></div>
-            <div class="format-showcase" aria-label="Ejemplos de formatos de factura">
-                <article class="mini-doc doc-back reveal-card"><div class="doc-head"><img class="doc-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><span class="doc-lines"><i></i><i></i></span></div><div class="doc-sample-emitter">MUESTRA · Bogotá, Colombia<br>Contacto de ejemplo</div><div class="doc-band"></div><div class="doc-sample-client"><b>CLIENTE</b><span>Comercial La Esquina</span><small>Factura FV-000128 · 07 nov 2026</small></div><div class="doc-content"><i></i><i></i><i></i><i></i></div><div class="doc-end"></div></article>
-                <article class="mini-doc doc-front reveal-card"><div class="doc-label">PDF · DISEÑO CLÁSICO</div><div class="doc-head"><img class="doc-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><span class="doc-lines"><i></i><i></i><i></i></span></div><div class="doc-title">FACTURA<br><b>ELECTRÓNICA</b></div><div class="doc-sample-emitter">MUESTRA · Bogotá, Colombia<br>Contacto de ejemplo</div><div class="doc-sample-client"><b>CLIENTE</b><span>Comercial La Esquina</span><small>FV-000128 · 07 nov 2026</small></div><div class="doc-band"></div><div class="doc-items"><div><span>Consultoría mensual</span><b>$280.000</b></div><div><span>Soporte técnico</span><b>$65.900</b></div></div><div class="doc-summary"><span>Subtotal</span><b>$345.900</b><span>Total</span><b>$345.900</b></div></article>
-                <article class="receipt reveal-card"><img class="receipt-logo" src="/assets/img/logo.png" alt="[TU MARCA]"><small>POS ELECTRÓNICO · MUESTRA</small><div class="receipt-dash"></div><div class="receipt-meta">Factura FV-000128<br>07 nov 2026 · Bogotá</div><div class="receipt-dash"></div><div class="receipt-row"><span>Consultoría</span><b>$280.000</b></div><div class="receipt-row"><span>Soporte (2 h)</span><b>$65.900</b></div><div class="receipt-dash"></div><div class="receipt-row receipt-total"><span>TOTAL</span><b>$345.900</b></div><div class="receipt-qr"></div><small>Gracias por tu compra</small></article>
-                <div class="format-caption"><span class="check-icon" aria-hidden="true">✓</span> PDF y POS electrónico incluidos</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section plan-section" id="planes">
+    <!-- SECCIÓN BENTO: Más posibilidades. La misma simplicidad. -->
+    <section class="section bento-section" id="caracteristicas">
         <div class="container">
-            <div class="section-heading"><p class="eyebrow">Claro desde el principio</p><h2>Un solo plan, todo incluido</h2><p>Sin cobros por factura ni sorpresas al final del mes.</p></div>
-            <article class="plan-card reveal-card">
-                <div class="plan-main"><span class="plan-tag">PLAN ANUAL</span><h3>Todo para facturar</h3><p>Un año completo de facturación para tu negocio.</p><div class="plan-price"><strong>$345.900</strong><span>/ año</span></div><p class="monthly-price" data-monthly-price data-target="28825">Menos de $29.000 al mes · [IVA incluido / no incluido]</p><a class="button plan-button" href="/registro/">Comprar plan anual</a><small class="plan-footnote">Pago anual único. La pasarela de pago se define próximamente.</small></div>
-                <div class="plan-includes"><h4>Todo incluido en tu plan</h4><ul><li><span class="check-icon">✓</span>Facturas ilimitadas</li><li><span class="check-icon">✓</span>Anulaciones incluidas</li><li><span class="check-icon">✓</span>Formato POS electrónico</li><li><span class="check-icon">✓</span>Múltiples formatos PDF</li></ul><div class="plan-note"><span class="note-icon" aria-hidden="true">i</span><span>Un precio sencillo para que puedas enfocarte en tu negocio.</span></div></div>
-            </article>
+            <div class="section-heading-center">
+                <p class="kicker">TODO INCLUIDO EN TU OPERACIÓN</p>
+                <h2>Más posibilidades.<br>La misma simplicidad.</h2>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Bento 1: Múltiples formatos PDF + Tirilla POS (Ancho) -->
+                <article class="bento-card bento-wide">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">01 / LA TRILOGÍA</span>
+                        <h3>Múltiples diseños PDF + Tirilla POS</h3>
+                    </div>
+                    <div class="format-segmented-tabs">
+                        <button type="button" class="tab-btn is-active">Estándar</button>
+                        <button type="button" class="tab-btn">Clásico</button>
+                        <button type="button" class="tab-btn">Detallado</button>
+                        <button type="button" class="tab-btn">Tirilla POS 80mm</button>
+                    </div>
+                    <div class="bento-invoices-preview">
+                        <!-- Mini factura Estándar -->
+                        <div class="mini-doc-preview doc-standard">
+                            <div class="mini-doc-top"><span>CASA OLIVA</span><span class="doc-badge-blue">Estándar</span></div>
+                            <div class="mini-doc-num">FE-1042</div>
+                            <div class="mini-doc-line"></div>
+                            <div class="mini-doc-rows">
+                                <div><span>Café origen</span><b>$50.000</b></div>
+                                <div><span>Torta artesanal</span><b>$20.000</b></div>
+                            </div>
+                            <div class="mini-doc-total">Total $83.300</div>
+                        </div>
+                        <!-- Mini factura Clásico -->
+                        <div class="mini-doc-preview doc-classic">
+                            <div class="mini-doc-top"><span>CASA OLIVA</span><span class="doc-badge-gray">Clásico</span></div>
+                            <div class="mini-doc-num">FE-1042</div>
+                            <div class="mini-doc-line"></div>
+                            <div class="mini-doc-rows">
+                                <div><span>Café origen</span><b>$50.000</b></div>
+                                <div><span>Torta artesanal</span><b>$20.000</b></div>
+                            </div>
+                            <div class="mini-doc-total">Total $83.300</div>
+                        </div>
+                        <!-- Mini factura Detallado -->
+                        <div class="mini-doc-preview doc-detailed">
+                            <div class="mini-doc-top"><span>CASA OLIVA</span><span class="doc-badge-dark">Detallado</span></div>
+                            <div class="mini-doc-num">FE-1042</div>
+                            <div class="mini-doc-line"></div>
+                            <div class="mini-doc-rows">
+                                <div><span>Café origen</span><b>$50.000</b></div>
+                                <div><span>Torta artesanal</span><b>$20.000</b></div>
+                            </div>
+                            <div class="mini-doc-total">Total $83.300</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bento 2: Anulaciones incluidas sin límite -->
+                <article class="bento-card bento-narrow">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">02 / SIN COSTOS EXTRA</span>
+                        <h3>Anulaciones incluidas sin límite</h3>
+                        <p class="bento-desc">Un error no debería costarte más. Anula y conserva la trazabilidad.</p>
+                    </div>
+                    <div class="bento-annul-preview">
+                        <div class="annul-card">
+                            <div class="annul-top">
+                                <strong>FE-1038</strong>
+                                <span class="tag-annulled">Anulada</span>
+                            </div>
+                            <div class="annul-meta">Motivo registrado · Consecutivo conservado y no reutilizable</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bento 3: Consumidor Final en 1 toque -->
+                <article class="bento-card">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">03 / VENTA RÁPIDA</span>
+                        <h3>Consumidor Final en 1 toque</h3>
+                        <p class="bento-desc">Cero demoras en la factura.</p>
+                    </div>
+                    <div class="bento-client-preview">
+                        <div class="client-pill-card">
+                            <strong>Consumidor Final</strong>
+                            <span>222222222222</span>
+                            <div class="client-selected-badge"><span class="badge-dot"></span> Seleccionado en 1 toque</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bento 4: Historial y control total -->
+                <article class="bento-card">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">04 / CONTROL EN ORDEN</span>
+                        <h3>Historial y control total</h3>
+                    </div>
+                    <div class="bento-history-preview">
+                        <div class="history-item">
+                            <span class="hist-id">FE-1042</span>
+                            <span class="hist-client">Casa Oliva</span>
+                            <span class="hist-status status-emit">Emitida</span>
+                        </div>
+                        <div class="history-item">
+                            <span class="hist-id">FE-1038</span>
+                            <span class="hist-client">María</span>
+                            <span class="hist-status status-annul">Anulada</span>
+                        </div>
+                        <div class="history-item">
+                            <span class="hist-id">FE-1037</span>
+                            <span class="hist-client">Willow</span>
+                            <span class="hist-status status-down">Descargada</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Bento 5: 100% móvil y cualquier navegador -->
+                <article class="bento-card">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">05 / SIEMPRE LISTO</span>
+                        <h3>100% móvil y desde cualquier navegador</h3>
+                        <p class="bento-desc">Tu negocio va contigo.</p>
+                    </div>
+                    <div class="bento-devices-preview">
+                        <div class="device-mock-laptop">
+                            <div class="laptop-screen">
+                                <div class="laptop-bar"><span>Factura · Plataforma</span></div>
+                                <div class="laptop-dashboard" aria-hidden="true">
+                                    <div class="laptop-sidebar"><i></i><i></i><i></i></div>
+                                    <div class="laptop-dashboard-content">
+                                        <strong>Resumen</strong>
+                                        <div class="dashboard-metrics"><i></i><i></i><i></i></div>
+                                        <div class="dashboard-chart"><i></i><i></i><i></i><i></i><i></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="device-mock-phone" aria-hidden="true"><span class="phone-mock-island"></span><span class="phone-mock-card"></span><span class="phone-mock-lines"></span><span class="phone-mock-total"></span></div>
+                    </div>
+                </article>
+
+                <!-- Bento 6: Integración autorizada DIAN (Full width banner) -->
+                <article class="bento-card bento-full">
+                    <div class="bento-card-header">
+                        <span class="bento-kicker">06 / CONEXIÓN A TU OPERACIÓN</span>
+                        <h3>Integración autorizada</h3>
+                    </div>
+                    <div class="integration-flow">
+                        <div class="flow-node"><strong>Tu negocio</strong></div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-node flow-node-accent"><strong>Factualy</strong></div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-node"><strong>Proveedor tecnológico autorizado DIAN</strong></div>
+                    </div>
+                    <div class="flow-footnote">La integración no implica una certificación propia de Factualy.</div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="section faq-section" id="preguntas">
-        <div class="container faq-layout"><div class="faq-intro"><p class="eyebrow">Resolvemos tus dudas</p><h2>Preguntas frecuentes</h2><p>¿Tienes otra pregunta? <a class="whatsapp-link" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">Comunícate con nosotros por WhatsApp</a>.</p></div><div class="faq-grid">
-            <article class="faq-card reveal-card"><span class="faq-number">01</span><h3>¿Cuánto cuesta el plan?</h3><p>El plan cuesta $345.900 COP al año e incluye facturas ilimitadas y anulaciones.</p></article>
-            <article class="faq-card reveal-card"><span class="faq-number">02</span><h3>¿Hay un límite de facturas?</h3><p>No. Puedes generar todas las facturas que necesite tu negocio durante el año.</p></article>
-            <article class="faq-card reveal-card"><span class="faq-number">03</span><h3>¿Qué formatos puedo usar?</h3><p>Puedes descargar diferentes diseños PDF o usar la tirilla POS electrónico.</p></article>
-            <article class="faq-card reveal-card"><span class="faq-number">04</span><h3>¿Cómo empiezo a facturar?</h3><p>Crea tus servicios, agrega un cliente o selecciona consumidor final y genera tu factura.</p></article>
-        </div></div>
+    <!-- SECCIÓN PRECIO: Simple también en el precio -->
+    <section class="section pricing-section" id="precio">
+        <div class="container">
+            <div class="section-heading-center">
+                <p class="kicker">UN SOLO PLAN. TODO LO QUE NECESITAS.</p>
+                <h2>Simple también en el precio.</h2>
+            </div>
+
+            <div class="pricing-card-wrapper">
+                <!-- Columna Izquierda: Precio y Beneficios -->
+                <div class="pricing-info-col">
+                    <span class="pricing-tag">UN SOLO PAGO ANUAL</span>
+                    <div class="pricing-cost">
+                        <span class="currency">$</span>
+                        <strong class="amount">345.900</strong>
+                        <span class="period">COP / año</span>
+                    </div>
+                    <div class="pricing-vat-pill">[IVA incluido / no incluido]</div>
+                    
+                    <ul class="pricing-features-list">
+                        <li><span class="check-mark">✓</span> Un solo pago anual</li>
+                        <li><span class="check-mark">✓</span> Facturas ilimitadas durante el año</li>
+                        <li><span class="check-mark">✓</span> Anulaciones incluidas sin costo extra</li>
+                        <li><span class="check-mark">✓</span> Varios diseños PDF y tirilla POS</li>
+                        <li><span class="check-mark">✓</span> Catálogo de productos y clientes</li>
+                        <li><span class="check-mark">✓</span> Soporte directo por WhatsApp</li>
+                    </ul>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta de Acción / Siguiente Paso -->
+                <div class="pricing-action-col">
+                    <div class="action-card-inner">
+                        <h3>Tu siguiente paso,<br>sin complicaciones.</h3>
+                        <a class="button button-checkout" href="/registro/">Ir al registro</a>
+                        
+                        <div class="checkout-steps-list">
+                            <div class="step-line"><span class="step-dot">1</span> Completa tu registro</div>
+                            <div class="step-line"><span class="step-dot">2</span> Paga seguro en pasarela</div>
+                            <div class="step-line"><span class="step-dot">3</span> Empieza a facturar</div>
+                        </div>
+
+                        <p class="checkout-legal-footnote">Pago seguro procesado a través de pasarela externa (ePayco, Wompi o PayU). Sin cobros ocultos ni sorpresas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="final-cta" id="comprar"><div class="container cta-inner"><div><p class="eyebrow eyebrow-light">Tu negocio, listo para facturar</p><h2>Empieza a facturar sin límites.</h2><p>Todo lo que necesitas en un solo plan anual.</p></div><div class="cta-action"><a class="button button-white" href="/registro/">Comprar plan anual</a><span>$345.900 COP / año</span></div><div class="cta-decoration" aria-hidden="true"></div></div></section>
+    <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="section faq-section" id="preguntas">
+        <div class="container">
+            <div class="section-heading-center">
+                <p class="kicker">RESOLVEMOS TUS DUDAS</p>
+                <h2>Todo claro. Desde el inicio.</h2>
+            </div>
+
+            <div class="faq-accordion-list">
+                <!-- FAQ 1 (Abierta por defecto) -->
+                <details class="faq-item" open>
+                    <summary class="faq-question">
+                        <span>¿Cómo funciona el pago anual de $345.900 COP?</span>
+                        <span class="faq-icon" aria-hidden="true">−</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Pagas una sola vez $345.900 COP por un año de servicio, con facturas ilimitadas y anulaciones incluidas. El tratamiento del IVA está pendiente de confirmación [IVA incluido / no incluido].</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Puedo emitir facturas en PDF y tirilla POS?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Sí. Puedes descargar múltiples diseños en formato PDF listos para enviar por correo o WhatsApp, o imprimir directamente en formato de tirilla para impresora térmica (POS).</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Qué pasa si necesito anular una factura?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Las anulaciones están 100% incluidas en tu plan anual y no tienen ningún costo extra. Puedes anular la factura conservando el consecutivo y la trazabilidad legal requerida por la DIAN.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>¿Cómo funciona el proceso después de registrarme?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Completas el formulario con los datos de tu negocio, realizas el pago en la pasarela de pagos segura y tu cuenta queda configurada para empezar a facturar de inmediato.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="/assets/img/logo.png" alt="[TU MARCA]"></a><p>Facturación simple para tu negocio.</p><div class="footer-contact"><a href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">WhatsApp · 3043659999</a><span>Tr 85 64A-15 Villa Luz, Bogotá</span></div></div><div class="container footer-bottom"><span>© 2026 FACTUALY. Todos los derechos reservados.</span><span>Hecho para simplificar tu día a día.</span></div></footer>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-content">
+        <div class="footer-left">
+            <div class="footer-brand">
+                <strong>[TU MARCA] - Factualy</strong>
+            </div>
+            <p class="footer-address">Tr 85 64A-15 Villa Luz, Bogotá</p>
+            <p class="footer-sub">Facturación electrónica para negocios en Colombia.</p>
+            
+            <div class="footer-legal-links">
+                <a href="#inicio">Política de privacidad [enlace pendiente]</a>
+                <span>·</span>
+                <a href="#inicio">Autorización de tratamiento de datos [enlace pendiente]</a>
+            </div>
+            <p class="footer-disclaimer">Las marcas de terceros aquí nombradas pertenecen a sus dueños legítimos.</p>
+        </div>
+
+        <div class="footer-right">
+            <a class="button button-whatsapp-footer" href="https://wa.me/573043659999" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83s-.85 4.26-2.41 5.82a8.217 8.217 0 0 1-5.82 2.41c-1.5 0-2.97-.39-4.26-1.12l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.32"/>
+                </svg>
+                WhatsApp · 304 365 9999
+            </a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
