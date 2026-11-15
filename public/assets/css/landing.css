@@ -2456,6 +2456,87 @@ html:not(.theme-light) .step-box .preview-add {
 }
 html.theme-light .step-box .preview-tag { color: #4A5A70; background: rgba(255,255,255,.78); }
 html.theme-light .step-box .preview-add { color: #713BAA; background: rgba(154,91,222,.1); border-color: rgba(154,91,222,.25); }
+html:not(.theme-light) .site-footer { color: #F5F7FC; }
+html:not(.theme-light) .footer-brand { color: #FFFFFF; }
+html:not(.theme-light) .footer-address { color: #E3E9F3; }
+html:not(.theme-light) .footer-sub { color: #C0CDDF; }
+html:not(.theme-light) .footer-legal-links { color: #A7B5C8; }
+html:not(.theme-light) .footer-disclaimer { color: #9AAAC0; }
+html:not(.theme-light) .footer-legal-links a:hover { color: #FFFFFF; }
+html.theme-light .site-footer { color: #0F1B2D; }
+html.theme-light .footer-brand { color: #0F1B2D; }
+html.theme-light .footer-address { color: #334155; }
+html.theme-light .footer-sub { color: #4A5A70; }
+html.theme-light .footer-legal-links { color: #4A5A70; }
+html.theme-light .footer-disclaimer { color: #536277; }
+html.theme-light .footer-legal-links a:hover { color: #773DB5; }
+
+/* Navegación móvil plegable: conserva a la vista tema y llamada a la acción. */
+.menu-toggle { display: none; }
+@media (max-width: 767px) {
+    .header-inner { position: relative; }
+    .header-actions { gap: 8px; }
+    .theme-toggle, .menu-toggle {
+        width: 44px;
+        height: 44px;
+        display: inline-grid;
+        place-items: center;
+        flex: 0 0 44px;
+        padding: 0;
+        color: #F4F7FF;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(220,232,255,.2);
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    .theme-toggle svg, .menu-toggle svg { width: 19px; height: 19px; }
+    .menu-toggle svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+    .menu-icon-close { display: none; }
+    .menu-toggle[aria-expanded="true"] .menu-icon-open { display: none; }
+    .menu-toggle[aria-expanded="true"] .menu-icon-close { display: block; }
+    .menu-toggle:focus-visible { outline: 3px solid rgba(154,91,222,.62); outline-offset: 3px; }
+    .button-header { min-height: 44px; padding: 8px 12px; font-size: .8rem; }
+    .site-nav {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        left: 0;
+        z-index: 120;
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        padding: 10px;
+        background: rgba(19, 25, 38, .88);
+        border: 1px solid rgba(220,232,255,.2);
+        border-radius: 18px;
+        box-shadow: 0 20px 48px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.12);
+        -webkit-backdrop-filter: saturate(180%) blur(28px);
+        backdrop-filter: saturate(180%) blur(28px);
+    }
+    .site-nav.is-open { display: flex; }
+    .site-nav .nav-link { min-height: 44px; display: flex; align-items: center; padding: 8px 12px; border-radius: 12px; }
+    .site-nav .nav-link:hover { background: rgba(255,255,255,.08); }
+}
+@media (max-width: 380px) {
+    .brand-logo { width: min(98px, 30vw); height: 34px; }
+    .button-header { padding-inline: 10px; font-size: .76rem; }
+}
+html.theme-light .theme-toggle, html.theme-light .menu-toggle {
+    color: #29354A;
+    background: rgba(255,255,255,.48);
+    border-color: rgba(255,255,255,.8);
+}
+html.theme-light .site-nav {
+    background: rgba(255,255,255,.76);
+    border-color: rgba(255,255,255,.88);
+    box-shadow: 0 20px 48px rgba(74,48,100,.12), inset 0 1px #fff;
+    -webkit-backdrop-filter: saturate(190%) blur(30px);
+    backdrop-filter: saturate(190%) blur(30px);
+}
+html.theme-light .site-nav .nav-link { color: #243047; }
+html.theme-light .site-nav .nav-link:hover { background: rgba(154,91,222,.1); color: #63338B; }
 .brand-logo {
     display: block;
     width: 160px;
@@ -2465,6 +2546,9 @@ html.theme-light .step-box .preview-add { color: #713BAA; background: rgba(154,9
     object-position: left 58%;
     transform: translateY(5px);
 }
+.brand-logo-light { display: none; }
+html.theme-light .brand-logo-dark { display: none; }
+html.theme-light .brand-logo-light { display: block; }
 @media (max-width: 640px) {
     .brand-logo { width: min(108px, 32vw); height: 37px; }
 }

@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateThemeToggle() {
         const isLight = rootElement.classList.contains('theme-light');
-        document.querySelectorAll('.brand-logo').forEach((logo) => {
-            logo.src = isLight ? '/assets/img/logo.png' : '/assets/img/logoc.png';
-        });
         if (!themeToggle) return;
         const action = isLight ? 'oscuro' : 'claro';
         themeToggle.setAttribute('aria-label', `Cambiar a modo ${action}`);
@@ -40,6 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         updateThemeToggle();
     });
+
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const primaryNavigation = document.querySelector('#primary-navigation');
+
+    function closeMobileNavigation() {
+        if (!menuToggle || !primaryNavigation) return;
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.setAttribute('title', 'Abrir menú de navegación');
+        primaryNavigation.classList.remove('is-open');
+    }
+
+    if (menuToggle && primaryNavigation) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+            menuToggle.setAttribute('title', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+            primaryNavigation.classList.toggle('is-open', isOpen);
+        });
+
+        primaryNavigation.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', closeMobileNavigation);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeMobileNavigation();
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.site-header')) closeMobileNavigation();
+        });
+    }
 
     // -------------------------------------------------------------------------
     // 1. Alternancia automática entre la vista móvil y la tirilla POS.
